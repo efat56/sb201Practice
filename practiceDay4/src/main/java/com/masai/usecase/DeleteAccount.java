@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.masai.dao.AccountDao;
 import com.masai.dao.AccountDaoImpl;
-import com.masai.model.Account;
+
 
 public class DeleteAccount {
 
