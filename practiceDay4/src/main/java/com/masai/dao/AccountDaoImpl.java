@@ -56,7 +56,7 @@ public class AccountDaoImpl implements AccountDao {
 		
 		EntityManager em =   EMUtil.provideEntityManager();
 		
-		account =em.find(Account.class,account.getAccNo());
+		//account =em.find(Account.class,account.getAccNo());
 		
 		if(account != null) {
 			em.getTransaction().begin();
