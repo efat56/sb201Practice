@@ -8,27 +8,25 @@ import javax.persistence.Query;
 import com.masai.model.Account;
 import com.masai.utility.EMUtil;
 
-public class GetAllDetails {
+public class GetDetailsNonPk {
 
 	public static void main(String[] args) {
 		
 		EntityManager em = EMUtil.provideEntityManager();
 		
-		String jpql = "from Account";
-		
-		 Query q = em.createQuery(jpql);
-		 
-		List<Account> listAccount =  q.getResultList();
+		String jpql = "from Account where name like 'name2' ";
 		
 		
-//		for(Account acc : listAccount) {
-//			System.out.println(acc);
+		   Query q =  em.createQuery(jpql);
+		   
+		List<Account> listAcc =  q.getResultList();
+		
+		
+//		for(Account a : listAcc) {
+//			System.out.println(a);
 //		}
 		
-		
-		listAccount.forEach(a -> System.out.println(a));
-		
-		
+		listAcc.forEach(a -> System.out.println(a));
 
 	}
 
