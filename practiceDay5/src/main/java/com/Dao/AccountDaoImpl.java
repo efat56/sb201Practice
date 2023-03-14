@@ -1,13 +1,29 @@
 package com.Dao;
 
+import javax.persistence.EntityManager;
+
+import com.EMUtility.EMUtil;
 import com.model.Account;
 
 public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public boolean createAccount(Account account) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean b = false;
+		
+		
+		 EntityManager em = EMUtil.ProvideEntityManger();
+		 
+		 em.getTransaction().begin();
+		 em.persist(account);
+		 b=true;
+		 em.getTransaction().commit();
+		 
+		 
+		 em.close();
+		 
+		return b;
 	}
 
 	@Override
