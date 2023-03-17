@@ -54,10 +54,6 @@ public class AccountDaoImpl implements AccountDao {
 		}else {
 			System.out.println("doesn't exist...");
 		}
-		
-		
-		
-		
 			
 		
 		em.close();
