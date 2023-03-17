@@ -35,15 +35,30 @@ public class AccountDaoImpl implements AccountDao {
 	@Override
 	public boolean updateAccount(Account account) {
 		boolean b = false;
+		
 		EntityManager em = EMUtil.ProvideEntityManger();
 		
+		Account acc = null;
+		
+		acc = em.find(Account.class, account.getAccNo());
 		
 		
-		
+		if(acc != null) {
+			
 			em.getTransaction().begin();
 			em.merge(account);
-			em.getTransaction().commit();
 			b=true;
+			em.getTransaction().commit();
+			
+			
+		}else {
+			System.out.println("doesn't exist...");
+		}
+		
+		
+		
+		
+			
 		
 		em.close();
 		
