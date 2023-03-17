@@ -31,6 +31,7 @@ public class DepositeCash {
 			
 			if(flag) {
 				System.out.println("deposite successfully....");
+				
 			}
 			else {
 				System.out.println("Technical problem....");
