@@ -58,17 +58,30 @@ public class AccountDaoImpl implements AccountDao {
 		
 		em.close();
 		
-		
-		
-		
-		
 		return b;
 	}
 
 	@Override
 	public Account findAccount(int accno) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Account acc = null;
+		 EntityManager em =   EMUtil.ProvideEntityManger();
+		 
+		acc =  em.find(Account.class, accno);
+		
+		if(acc == null) {
+			
+			System.out.println("Account does not exist");
+			
+		}
+		else {
+			return acc;
+		}
+		
+		return acc;
+		 
+		 
+		
 	}
 
 }
