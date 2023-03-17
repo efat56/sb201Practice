@@ -28,8 +28,19 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public boolean deleteAccount(int accno) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean flag = false;
+		EntityManager em =   EMUtil.ProvideEntityManger();
+		Account acc = null;
+		acc = em.find(Account.class, accno);
+		 if(acc != null) {
+			 em.getTransaction().begin();
+			 em.remove(acc);
+			 flag=true;
+			 em.getTransaction().commit();
+		 }else {
+			 System.out.println("account does not exist with this id....");
+		 }
+		return flag;
 	}
 
 	@Override
