@@ -34,8 +34,24 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public boolean updateAccount(Account account) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean b = false;
+		EntityManager em = EMUtil.ProvideEntityManger();
+		
+		
+		
+		
+			em.getTransaction().begin();
+			em.merge(account);
+			em.getTransaction().commit();
+			b=true;
+		
+		em.close();
+		
+		
+		
+		
+		
+		return b;
 	}
 
 	@Override
