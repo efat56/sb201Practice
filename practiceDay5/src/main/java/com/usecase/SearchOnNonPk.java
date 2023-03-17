@@ -35,8 +35,8 @@ public class SearchOnNonPk {
 		Account a=(Account) q.getSingleResult();
 		System.out.println(a);
 		 
-		Account acc =  q2.getSingleResult();
-		System.out.println(acc);
+		Account acc2 =  q2.getSingleResult();
+		System.out.println(acc2);
 
 		 
 
