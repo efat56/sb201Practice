@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.Dao.AccountDao;
 import com.Dao.AccountDaoImpl;
-import com.model.Account;
+
 
 public class DeleteAccount {
 
