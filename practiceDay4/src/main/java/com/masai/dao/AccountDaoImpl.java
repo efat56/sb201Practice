@@ -61,8 +61,9 @@ public class AccountDaoImpl implements AccountDao {
 		if(account != null) {
 			em.getTransaction().begin();
 			em.merge(account);
-			em.getTransaction().commit();
 			flag=true;
+			em.getTransaction().commit();
+			
 		}
 		else {
 			System.out.println("account not found....");
